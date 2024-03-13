@@ -1,11 +1,13 @@
 import './App.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 function App() {
   const [bloques, setBloques] = useState(Array(9).fill(null));
   const [turnoX, setTurnoX] = useState(true);
-  const [ganador, setGanador] = useState(null);	
+  const [ganador, setGanador] = useState(null);
+  const [victoriasX, setVictoriasX] = useState(0);
+  const [victoriasO, setVictoriasO] = useState(0);	
 
   const comprobarGanador = (bloques) => {
     const lineasGanadoras = [
@@ -35,7 +37,21 @@ function App() {
       nuevoBloques[id] = turnoX ? 'X' : 'O'; //Alternar entre X y O
       setBloques(nuevoBloques);
       setTurnoX(!turnoX);
-      setGanador(comprobarGanador(nuevoBloques));
+      //setGanador(comprobarGanador(nuevoBloques));
+      //hasta aca es lo viejo
+      const ganadorActual = comprobarGanador(nuevoBloques);
+      if (ganadorActual) {
+        setGanador(ganadorActual);
+        if (ganadorActual === 'X') {
+          const victorias = victoriasX + 1;
+          setVictoriasX(victorias);
+          localStorage.setItem('victoriasX', victorias);
+        } else if (ganadorActual === 'O') {
+          const victorias = victoriasO + 1;
+          setVictoriasO(victorias);
+          localStorage.setItem('victoriasO', victorias);
+        }
+      }
     }
   };
 
@@ -56,22 +72,33 @@ function App() {
   };
 
 
+  useEffect(() => {
+    const victoriasXGuardadas = localStorage.getItem('victoriasX');
+    const victoriasOGuardadas = localStorage.getItem('victoriasO');
+    if (victoriasXGuardadas) {
+      setVictoriasX(parseInt(victoriasXGuardadas));
+    }
+    if (victoriasOGuardadas) {
+      setVictoriasO(parseInt(victoriasOGuardadas));
+    }
+  }, []);
+
   return (
     <div className="App">
       <h1 >
         <div className='texto-colorido'>Tic Tac Toe</div>
-        
       </h1>
-    
-      <div className='tablero'>
-      {bloques.map((value, id) => (
-          <div key={id} className={`bloque ${value}`} onClick={() => handleClick(id)}>
-            {value}
-          </div>
-        ))}
-      </div>
-      
       <div className="texto-colorido">{mensaje()}</div>
+      <div className='tablero'>
+        {bloques.map((value, id) => (
+            <div key={id} className={`bloque ${value}`} onClick={() => handleClick(id)}>
+              {value}
+            </div>
+          ))}
+      </div>
+      <div className="victorias">
+        <div>Victorias X: {victoriasX}  ||  Victorias O: {victoriasO}</div>
+      </div>
       <div >
         {(ganador || !bloques.includes(null)) && <button className="botón-estético" onClick={reiniciar}>Reiniciar</button>}
       </div>

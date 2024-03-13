@@ -41,7 +41,7 @@
 }
 
 .texto-colorido {
-  font-size: 3em; 
+  font-size: 2.5em; 
   display: inline-block ;
   background: black; 
   -webkit-background-clip: text;
@@ -64,4 +64,10 @@
 
 .botón-estético:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 54, 38, 0.597); /* Sombra al pasar el ratón */
+} /* Espacio entre elementos */
+
+.victorias {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
 }

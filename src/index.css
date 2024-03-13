@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: gray;
+  background: grey;
   background-size: cover; /* Para que el gradiente cubra toda la pantalla */
   background-attachment: fixed; /* Para que el gradiente permanezca fijo al hacer scroll */
 }
