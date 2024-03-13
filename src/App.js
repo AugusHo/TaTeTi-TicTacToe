@@ -70,7 +70,6 @@ function App() {
       <div className="mensaje">{mensaje()}</div>
       {(ganador || !bloques.includes(null)) && <button onClick={reiniciar}>Reiniciar</button>}
 
-      <div className="copyright">© 2024 Juego de Tic-Tac-Toe que hice para aprender, todos los derechos reservados.</div>
     </div>
   );
 }
