@@ -59,19 +59,22 @@ function App() {
   return (
     <div className="App">
       <h1 >
-        <div>Tic</div>
+        <div className='texto-colorido'>Tic Tac Toe</div>
+        
       </h1>
     
       <div className='tablero'>
       {bloques.map((value, id) => (
-          <div key={id} className="bloque" onClick={() => handleClick(id)}>
+          <div key={id} className={`bloque ${value}`} onClick={() => handleClick(id)}>
             {value}
           </div>
         ))}
       </div>
-      <div className="mensaje">{mensaje()}</div>
-      {(ganador || !bloques.includes(null)) && <button onClick={reiniciar}>Reiniciar</button>}
-
+      
+      <div className="texto-colorido">{mensaje()}</div>
+      <div >
+        {(ganador || !bloques.includes(null)) && <button className="botón-estético" onClick={reiniciar}>Reiniciar</button>}
+      </div>
       <div className="copyright">© 2024 Juego de Tic-Tac-Toe que hice para aprender, todos los derechos reservados.</div>
     </div>
   );

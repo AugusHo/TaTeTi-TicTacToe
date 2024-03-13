@@ -7,21 +7,11 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #f8f9fa;
+  background-color: grey;
   padding: 10px;
   text-align: center;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid grey;
   font-size: smaller;
-}
-
-
-.text-box {
-  border: 1px solid #000;
-  color:aqua;
-  background-color: #000; /* Define el borde de la caja */
-  padding: 10px; /* Agrega espacio alrededor del contenido */
-  width: 500px; /* Define el ancho de la caja */
-  height: 300px; /* Define la altura de la caja */
 }
 
 .bloque{
@@ -34,47 +24,44 @@
   font-size: 120px; /* Tamaño de la fuente para las casillas */
 }
 
+.X {
+  color: red; /* Color para las X */
+}
+
+.O {
+  color: lightseagreen; /* Color para las O */
+}
+
 .tablero {
   display: flex;
   flex-wrap: wrap;
   width: 600px; 
-  margin: 0 auto; /* Esto centrará el tablero horizontalmente */
+  margin: 0 auto;
+  border-radius: 50%;
 }
 
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.texto-colorido {
+  font-size: 3em; 
+  display: inline-block ;
+  background: black; 
+  -webkit-background-clip: text;
+  background-clip: text; 
+  -webkit-text-fill-color: transparent;
 }
 
-/* hace q gire xd */
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.botón-estético {
+  background: linear-gradient(to right, #05c971, #79ff5e); /* Fondo degradado */
+  border: none; /* Borde sin estilo */
+  border-radius: 25px; /* Bordes redondeados */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin subrayado */
+  display: inline-block;
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-/* Hace la animacion */
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.botón-estético:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 54, 38, 0.597); /* Sombra al pasar el ratón */
 }
