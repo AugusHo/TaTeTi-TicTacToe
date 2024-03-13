@@ -2,11 +2,51 @@
   text-align: center;
 }
 
+.copyright {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ccc;
+  font-size: smaller;
+}
+
+
+.text-box {
+  border: 1px solid #000;
+  color:aqua;
+  background-color: #000; /* Define el borde de la caja */
+  padding: 10px; /* Agrega espacio alrededor del contenido */
+  width: 500px; /* Define el ancho de la caja */
+  height: 300px; /* Define la altura de la caja */
+}
+
+.bloque{
+  background-color:gray;
+  width: 100px; 
+  height: 100px;
+  border: 1px solid #000; /* Borde para cada casilla */
+  box-sizing: border-box; /* Incluye el borde en el tamaño total de la casilla */
+  cursor: pointer; /* Cambia el cursor al hacer hover sobre las casillas */
+}
+
+.tablero {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px; 
+  margin: 0 auto; /* Esto centrará el tablero horizontalmente */
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* hace q gire xd */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,6 +68,7 @@
   color: #61dafb;
 }
 
+/* Hace la animacion */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
