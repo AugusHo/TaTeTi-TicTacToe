@@ -25,18 +25,19 @@
 }
 
 .bloque{
-  background-color:gray;
-  width: 100px; 
-  height: 100px;
+  background-color:white;
+  width: 200px; 
+  height: 200px;
   border: 1px solid #000; /* Borde para cada casilla */
   box-sizing: border-box; /* Incluye el borde en el tamaño total de la casilla */
   cursor: pointer; /* Cambia el cursor al hacer hover sobre las casillas */
+  font-size: 120px; /* Tamaño de la fuente para las casillas */
 }
 
 .tablero {
   display: flex;
   flex-wrap: wrap;
-  width: 300px; 
+  width: 600px; 
   margin: 0 auto; /* Esto centrará el tablero horizontalmente */
 }
 
